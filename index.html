@@ -10,12 +10,37 @@
     <div class="container">
         <h1>Odin Library Project</h1>
 
-        <div id="book-container">
-            
+        <div id="book-container"></div>
+        <div id="myModal" class="modal">
+            <dialog id="dialog">
+                <form action="#" method="dialog">
+                    <p>
+                        <label for="title"><Strong>Title: </Strong></label>
+                        <input type="text" id="title" name="book-title" required>
+                    </p>
+                    <p>
+                        <label for="author"><strong>Author: </strong></label>
+                        <input type="text" id="author" name="book-author" required>
+                    </p>
+                    <p>
+                        <label for="pages"><strong>Pages</strong></label>
+                        <input type="text" id="pages" name="book-pages" required>
+                    </p>
+                    <p>
+                        <label for="read"><strong>Read: </strong></label>
+                        <input type="text" id="read" name="book-read" required>
+                    </p>
+                    
+                    <p>
+                        <button type="submit" id="close-modal">Submit book</button>
+                    </p>
+                </form>
+            </dialog>
+            <div id="btn-container">
+                <button id="open-modal" class="addBookBtn">New Book</button>
+            </div>
         </div>
-        <div id="btn-container">
-            <button class="addBookBtn">New Book</button>
-        </div>
+       
     </div>
 
     <script src="index.js"></script>
