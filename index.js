@@ -9,6 +9,10 @@ function Book(title, author, pages, read) {
     console.log(`Book ${title} by ${author} created.`);
 }
 
+// Book.prototype.hasRead() {
+
+// }
+
 function addBookToLibrary(book){
     myLibrary.push(book);
     console.log(`Book "${book.title}" added to the library`);
@@ -29,6 +33,7 @@ function createBookCard(book) {
     const bookHeader = document.createElement('h3');
     const bookList = document.createElement('ul');
     const removeBtn = document.createElement('button');
+    const readBtn = document.createElement('button');
     const excludedKey = 'id';
     const excludedKey2 = 'title';
 
@@ -38,9 +43,11 @@ function createBookCard(book) {
     removeBtn.setAttribute('data-id', book.id);
     removeBtn.classList.add('remove-btn');
     removeBtn.textContent = 'Remove';
+    readBtn.classList.add('read-btn');
+
 
     for(const key in book){
-        if(key === excludedKey || key === excludedKey2){
+        if(key === 'id' || key === 'title' || key === 'read'){
             continue;
         }
         const newItem = document.createElement('li');
@@ -51,6 +58,7 @@ function createBookCard(book) {
 
     newBook.appendChild(bookHeader);
     newBook.appendChild(bookList);
+    newBook.appendChild(readBtn);
     newBook.appendChild(removeBtn);
     container.appendChild(newBook);
 }
